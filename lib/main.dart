@@ -45,7 +45,14 @@ class _MyAppState extends State<MyApp> {
               child: Image.asset('images/$leftdicenumber.png'),
             ),
           ),
-
+          Expanded(
+            child: TextButton(
+              onPressed: () {
+                changediceface();
+              },
+              child: Image.asset('images/$rightdicenumber.png'),
+            ),
+          ),
         ],
       ),
     );
