@@ -2,18 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.green,
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Text('Dice'),
-        ),
-        body: MyApp(),
-      ),
-    ),
-  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -34,26 +23,35 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                changediceface();
-              },
-              child: Image.asset('images/$leftdicenumber.png'),
-            ),
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.green,
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Text('Dice'),
+        ),
+        body: Center(
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    changediceface();
+                  },
+                  child: Image.asset('images/dice$leftdicenumber.png'),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  onPressed: () {
+                    changediceface();
+                  },
+                  child: Image.asset('images/dice$rightdicenumber.png'),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: TextButton(
-              onPressed: () {
-                changediceface();
-              },
-              child: Image.asset('images/$rightdicenumber.png'),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
